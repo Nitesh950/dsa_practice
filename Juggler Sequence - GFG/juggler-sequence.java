@@ -30,22 +30,24 @@ class GFG{
 class Solution{
     static List<Integer> jugglerSequence(int N){
         // code here
-        return helper(new ArrayList<Integer>(), N);
-        
-    }
-    static List<Integer> helper(List<Integer> ans, int N){
         if(N==1){
-            ans.add(N);
-            return ans;
+            List<Integer> base = new ArrayList<Integer>();
+            base.add(1);
+            return base;
         }
-        
+        List<Integer> ans = new ArrayList<Integer>();
+        List<Integer> res = new ArrayList<Integer>();
         ans.add(N);
-        if(N%2==1){
-            helper(ans, (int)(Math.floor(Math.pow(N, 1.5))));
-        }else{
-            helper(ans, (int)(Math.floor(Math.pow(N, 0.5))));
+        if(N%2==0){
+             res = jugglerSequence((int)(Math.pow(N, 0.5)));
         }
-        
+        else{
+            res = jugglerSequence((int)(Math.pow(N, 1.5)));
+        }
+        for(Integer val: res){
+            ans.add(val);
+        }
         return ans;
     }
+    
 }
