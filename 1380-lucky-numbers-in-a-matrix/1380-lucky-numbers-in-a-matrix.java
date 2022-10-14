@@ -5,6 +5,7 @@ class Solution {
             for(int j=0; j<matrix[i].length; j++){
                 if(checkRow(matrix, i, matrix[i][j]) && checkCol(matrix, j, matrix[i][j])){
                     result.add(matrix[i][j]);
+                    break;
                 }
             }
         }
