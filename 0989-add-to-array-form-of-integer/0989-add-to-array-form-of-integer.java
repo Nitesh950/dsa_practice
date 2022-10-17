@@ -1,7 +1,7 @@
 class Solution {
     public static List<Integer> addToArrayForm(int[] num, int k) {
         int carry=0;
-        List<Integer> result = new ArrayList<>();
+        LinkedList<Integer> result = new LinkedList<>();
         
         int i=num.length-1;
         while(i>=0 || k!=0) {
@@ -11,20 +11,20 @@ class Solution {
         		sum += num[i];
         	}
         	if(sum>=10) {
-        		result.add(sum-10);
+        		result.addFirst(sum-10);
         		carry = sum/10;
         	}else {
-        		result.add(sum);
+        		result.addFirst(sum);
         		carry=0;
         	}
         	i--;
         	k/=10;
         }
         if(carry!=0) {
-        	result.add(carry);
+        	result.addFirst(carry);
         }
         
-        Collections.reverse(result);
+        // Collections.reverse(result);
         return result;
     }
 }
