@@ -14,9 +14,8 @@ class Solution {
         ListNode head = list;
         int carry = 0;
         while(l1!=null || l2!=null || carry!=0){
-            int x =0, y=0;
-            if(l1!=null) x=l1.val;
-            if(l2!=null) y=l2.val;
+            int x = (l1 != null) ? l1.val : 0;
+            int y = (l2 != null) ? l2.val : 0;
             
             int sum = x + y + carry;
             
