@@ -30,10 +30,9 @@ class Solution {
             count++;
         }
         
-        ListNode ssn = temp;
     int fval = fsn.val;
-        fsn.val = ssn.val;
-        ssn.val = fval;
+        fsn.val = temp.val;
+        temp.val = fval;
         
         return head;
     }
