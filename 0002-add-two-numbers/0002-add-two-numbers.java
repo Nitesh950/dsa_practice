@@ -13,7 +13,7 @@ class Solution {
         ListNode list = new ListNode(0);
         ListNode head = list;
         int carry = 0;
-        while(l1!=null || l2!=null){
+        while(l1!=null || l2!=null || carry!=0){
             int x =0, y=0;
             if(l1!=null) x=l1.val;
             if(l2!=null) y=l2.val;
@@ -26,10 +26,6 @@ class Solution {
             
             if(l1!=null) l1 = l1.next;
             if(l2!=null) l2 = l2.next;
-        }
-        if(carry!=0){
-            head.next = new ListNode(carry);
-            head = head.next;
         }
         
         return list.next;
