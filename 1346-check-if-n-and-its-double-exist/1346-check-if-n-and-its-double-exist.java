@@ -2,16 +2,8 @@ class Solution {
     public boolean checkIfExist(int[] arr) {
         Arrays.sort(arr);
         int count = 0;
-        for(int element: arr){
-            if(element ==0){
-                count++;
-                if(count==2){
-                    return true;
-                }
-                continue;
-            }
-            
-            if(search(arr, 2*element)!=-1){
+        for(int i=0; i<arr.length; i++){
+            if(search(arr, arr[i]*2) != -1 && search(arr, arr[i]*2) != i){
                 return true;
             }
         }
