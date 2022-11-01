@@ -10,8 +10,8 @@
  */
 class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-                System.out.println(l1.val);
-                System.out.println(l2.val);
+                // System.out.println(l1.val);
+                // System.out.println(l2.val);
         ListNode head1 = reverse(l1);
         ListNode head2 = reverse(l2);
         // System.out.println(head1.next.val);
