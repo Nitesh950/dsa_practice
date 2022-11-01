@@ -9,18 +9,11 @@ class Solution {
 				temp = 26;
 				columnNumber -= 1;
 			}	
-			ans += (char)('A' + temp - 1);
+			ans = (char)('A' + temp - 1)+ ans;
 			
 			columnNumber /= 26;
 		}
 		
-		return reverse(ans);
+		return ans;
     }
-	public String reverse(String ans) {
-		StringBuilder sb = new StringBuilder();
-		for(int i=ans.length()-1; i>=0; i--) {
-			sb.append(ans.charAt(i));
-		}
-		return sb.toString();
-	}
 }
